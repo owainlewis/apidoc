@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import yaml
-import itertools
 
 class SwaggerParser:
     def __init__(self, file_path):
@@ -9,9 +8,6 @@ class SwaggerParser:
     def load(self, file_path):
         with open(file_path, 'r') as stream:
                 return yaml.load(stream)
-
-    def __flatten(self, list_of_lists):
-        return list(itertools.chain(*list_of_lists))
 
     def info(self): 
         return self.data['info']
