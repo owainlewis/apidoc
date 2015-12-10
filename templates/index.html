@@ -4,8 +4,11 @@
     <meta charset="utf-8">
     <title>API Docs</title>
     <meta name="description" content="">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/zenburn.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
   </head>  
   <body>
@@ -13,19 +16,33 @@
       <header>My Company</header>
       <h5>Introduction</h5>
       <ul>
-	<li>
-	  <a class="sidebar-nav-item" href="#intro">Introduction</a>
-	</li>
+        {% for operation in operations %}
+	  <li>
+	    <a class="" href="#{{operation['method']}}{{operation['path']}}">{{ operation['summary'] }}</a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
     <div id="main">
-      {% for operation in operations %}
+
       <section class="method">
-	<div class="left">
-	  <h1>{{ operation['summary'] }}</h1>
-	  <div class="request">
+        <div class="left">
+          <h1>{{ spec.info.title }} v{{ spec.info.version }}</h1>
+          {{ spec.info.description }}
+        </div>
+        <div class="right">
+        </div>
+      </section>
+
+      {% for operation in operations %}
+      <section class="method" id="{{operation['method']}}{{operation['path']}}">
+        <div class="left">
+          <h1>{{ operation['summary'] }}</h1>
+            <div class="request">
 	    <h4>HTTP Request</h4>
-	    {{ operation['method'] }} {{ operation['path'] }}
+            <code>
+              {{ operation['method'].upper() }} {{spec.schemes[0] }}://{{spec.host}}{{ operation['path'] }}
+            </code>
 	  </div>
 	  <div class="description">
             {{ operation['description'] }}
@@ -33,7 +50,16 @@
        </div>
        <div class="right">
          <h3>Responses</h3>	 
-        </div>	
+         <pre>
+           <code class="javascript">
+{
+  "id" : "recipe/_design/recipes"
+  "ok" : true,
+  "rev" : "3-7a05370bff53186cb5d403f861aca154",
+}
+           </code>
+         </pre>
+      </div>	
       </section>
       {% endfor %}     
     </div>
