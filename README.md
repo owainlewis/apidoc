@@ -1,6 +1,6 @@
 # APIDOC (WIP)
 
-Generate nice documentation from Swagger or RAML
+Generate professional looking, human readable documentation from Swagger or RAML.
 
 ## Getting Started
 
