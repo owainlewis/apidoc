@@ -1,15 +1,28 @@
 body {
     font-size: 16px;
+    color: #4c555a;
     font-family: 'Roboto', 'Helvetica', sans-serif;
 }
+
+a { color: #169CEE; font-weight: bold; } 
 
 html, body  {
     height: 100%;
     width: 100%;
-} 
+}
+
+table { margin: 48px 0; }
+
+#header {
+    height: 48px;
+    width: 100%;
+    background: #222;
+    z-index: 2;
+}
 
 #sidebar {
     position: fixed;
+    top: 0;
     height: 100%;
     width: 240px;
     background: #f0f4f7;
@@ -19,7 +32,12 @@ html, body  {
 #sidebar header {
     font-size: 24px;
     font-weight: bold;
+    margin: 0 0 48px 0
 }
+
+#sidebar ul { list-style: none; margin: 24px 0; padding: 0; }
+
+#sidebar li { margin: 6px 0; }
 
 #main {
     width: 100%;
