@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>API Docs</title>
+    <meta name="description" content="">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
+  </head>  
+  <body>
+    <div id="sidebar">
+      <header>My Company</header>
+      <h5>Introduction</h5>
+      <ul>
+	<li>
+	  <a class="sidebar-nav-item" href="#intro">Introduction</a>
+	</li>
+      </ul>
+    </div>
+    <div id="main">
+      {% for operation in operations %}
+      <section class="method">
+	<div class="left">
+	  <h1>{{ operation['summary'] }}</h1>
+	  <div class="request">
+	    <h4>HTTP Request</h4>
+	    {{ operation['method'] }} {{ operation['path'] }}
+	  </div>
+	  <div class="description">
+            {{ operation['description'] }}
+          </div>          
+       </div>
+       <div class="right">
+         <h3>Responses</h3>	 
+        </div>	
+      </section>
+      {% endfor %}     
+    </div>
+  </body>  
+</html>
