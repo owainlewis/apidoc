@@ -1,0 +1,60 @@
+body {
+    font-size: 16px;
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+html, body  {
+    height: 100%;
+    width: 100%;
+} 
+
+#sidebar {
+    position: fixed;
+    height: 100%;
+    width: 240px;
+    background: #f0f4f7;
+    padding: 24px;
+}
+
+#sidebar header {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#main {
+    width: 100%;
+    position: relative;
+    left: 240px;
+}
+
+.method {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.left, .right {    
+    height: 100%;
+    min-height: 500px;
+    padding: 24px;
+    flex: 1;
+}
+
+.left {
+    border-bottom: 2px solid #eee;
+}
+
+.right {
+    background: #24272C;
+    color: #d0d4d7;
+    border-bottom: 2px solid #333;    
+}
+
+.request {
+    padding: 6px;
+    margin: 24px 0;
+    border: 2px solid #ddd;
+}
+
+pre { background: #4c555a; color: white; }
