@@ -3,7 +3,7 @@ from parser import SwaggerParser
 
 app = Flask(__name__)
 
-parser = SwaggerParser("static/specs/uber.yaml")
+parser = SwaggerParser("static/specs/examples.yaml")
 
 @app.route("/")
 def index():

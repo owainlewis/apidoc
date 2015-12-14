@@ -44,35 +44,36 @@
             <div class="request">
 	    <h4>HTTP Request</h4>
             <code>
-              {{ operation['method'].upper() }} {{spec.schemes[0] }}://{{spec.host}}{{ operation['path'] }}
+              {{ operation['method'].upper() }} {{spec.schemes }}://{{spec.host}}{{ operation['path'] }}
             </code>
 	  </div>
 	  <div class="description">
             {{ operation['description'] }}
 
 	    <table class="table striped">
-	      <tr><th>Status</th><th>Description</th></tr>
-	      {{ operation['responses'] }}
-	    {% for status, info in operation['responses'].items() %}
+	      <tr>
+		<th>Status</th>
+		<th>Description</th>
+	      </tr>
+              {% for status, info in operation['responses'].items() %}
               <tr>
 		<td>{{ status }}</td>
 	        <td>{{ info['description'] }}</td>
               </tr>
-	    {% endfor %}
+	      {% endfor %}
 	    </table>
           </div>          
-       </div>
+	</div>
        <div class="right">
-         <h3>Responses</h3>	 
+         <h3>Sample Response</h3>
+	 {% for status, info in operation['responses'].items() %}
+	 <h3>{{status}}</h3>
          <pre>
            <code class="javascript">
-{
-  "id" : "recipe/_design/recipes"
-  "ok" : true,
-  "rev" : "3-7a05370bff53186cb5d403f861aca154",
-}
+             {{ info['examples']['application/json'] }}
            </code>
          </pre>
+	 {% endfor %}
       </div>	
       </section>
       {% endfor %}     
