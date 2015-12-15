@@ -1,23 +1,41 @@
 body {
     font-size: 16px;
     color: #4c555a;
-    font-family: 'Roboto', 'Helvetica', sans-serif;
+    font-family: 'Hind', 'Helvetica', sans-serif;
 }
 
-a { color: #169CEE; font-weight: bold; } 
+a { color: #169CEE; font-weight: bold; }
+
+pre, code { font-size: 14px; }
 
 html, body  {
     height: 100%;
     width: 100%;
 }
 
-table { margin: 48px 0; }
+table { margin: 48px 0; width: 100%; }
+
+tr { border-bottom: 1px solid #eee; }
+
+td { padding: 3px; }
 
 #header {
-    height: 48px;
+    height: 76px;
     width: 100%;
-    background: #222;
+    border-bottom: 2xp solid #FAFCFC;
     z-index: 2;
+    padding: 0 24px;
+    position: fixed;
+}
+
+#header #logo {
+    font-size: 24px;
+    line-height: 76px;
+    margin: 0;
+}
+
+#header #logo a {
+    color: #333;
 }
 
 #sidebar {
@@ -25,24 +43,21 @@ table { margin: 48px 0; }
     top: 0;
     height: 100%;
     width: 240px;
-    background: #f0f4f7;
-    padding: 24px;
+    background: #1D1F22;
+    padding: 76px 24px;
+    color: #d0d4d7;
 }
 
-#sidebar header {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0 0 48px 0
-}
+#sidebar h1,
+#sidebar h2,
+#sidebar h3 { color: #d0d4d7; }
 
 #sidebar ul { list-style: none; margin: 24px 0; padding: 0; }
 
 #sidebar li { margin: 6px 0; }
 
 #main {
-    width: 100%;
-    position: relative;
-    left: 240px;
+    margin: 0 0 0 240px;
 }
 
 .method {
@@ -68,10 +83,14 @@ table { margin: 48px 0; }
     border-bottom: 2px solid #333;    
 }
 
+.intro {
+    padding: 48px 0;
+}
+
 .request {
     padding: 6px;
     margin: 24px 0;
     border: 2px solid #ddd;
 }
 
-pre { background: #3f3f3f; color: white; max-width: 80%; }
+pre { background: #1d1f21; color: white; border: 1px solid rgba(100,100,100,0.2); }

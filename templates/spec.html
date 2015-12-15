@@ -1,24 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>API Docs</title>
-    <meta name="description" content="">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/styles/zenburn.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.0.0/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,700,500' rel='stylesheet' type='text/css' />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}" />
-  </head>  
-  <body> 
+{% extends "layout.html" %}
+{% block body %}
     <div id="sidebar">
-      <header>My Company</header>
-      <h5>Introduction</h5>
+      <h3>Operations</h3>
       <ul>
         {% for operation in operations %}
 	  <li>
-	    <a class="" href="#{{operation['method']}}{{operation['path']}}">{{ operation['summary'] }}</a>
+	    <a href="#{{operation['method']}}{{operation['path']}}">{{ operation['summary'] }}</a>
           </li>
         {% endfor %}
       </ul>
@@ -37,6 +24,7 @@
         <div class="right">
         </div>
       </section>
+      
       {% for operation in operations %}
       <section class="method" id="{{operation['method']}}{{operation['path']}}">
         <div class="left">
@@ -44,7 +32,7 @@
             <div class="request">
 	    <h4>HTTP Request</h4>
             <code>
-              {{ operation['method'].upper() }} {{spec.schemes }}://{{spec.host}}{{ operation['path'] }}
+              {{ operation['method'].upper() }} {{ operation['path'] }}
             </code>
 	  </div>
 	  <div class="description">
@@ -65,18 +53,18 @@
           </div>          
 	</div>
        <div class="right">
-         <h3>Sample Response</h3>
-	 {% for status, info in operation['responses'].items() %}
-	 <h3>{{status}}</h3>
+	 <h3>Example Request</h3>
          <pre>
            <code class="javascript">
-             {{ info['examples']['application/json'] }}
+curl -iX GET http://mysite.com/path	     
            </code>
          </pre>
-	 {% endfor %}
       </div>	
       </section>
       {% endfor %}     
     </div>
-  </body>  
-</html>
+
+    </div>
+
+{% endblock %}
+
