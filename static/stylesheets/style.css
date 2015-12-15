@@ -6,6 +6,10 @@ body {
 
 a { color: #169CEE; font-weight: bold; }
 
+h1 { font-size: 32px; }
+h2 { font-size: 24px; }
+h3 { font-size: 18px; }
+
 pre, code { font-size: 14px; }
 
 html, body  {
