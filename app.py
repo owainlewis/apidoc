@@ -21,8 +21,8 @@ def spec(name):
 
 @app.route("/")
 def index():
-     return render_template('intro.html', specs=load_specs())
+    return render_template('intro.html', specs=load_specs())
 
 PORT = os.getenv('VCAP_APP_PORT', '5000')
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=int(PORT), debug=True)
+    app.run(host='0.0.0.0', port=int(PORT), debug=True)
