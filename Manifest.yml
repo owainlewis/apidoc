@@ -1,0 +1,4 @@
+---
+applications:
+- name: platform-docs
+  memory: 128M
