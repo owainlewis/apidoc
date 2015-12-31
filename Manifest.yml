@@ -1,4 +1,4 @@
 ---
 applications:
-- name: platform-docs
+- name: swagger-docs
   memory: 128M
