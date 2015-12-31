@@ -1,7 +1,6 @@
-# APIDOC (WIP)
+# API DOC
 
-Generate professional looking, human readable documentation from
-Swagger or RAML.
+Generate professional looking, human readable documentation from *Swagger* or RAML (TODO).
 
 A demo can be found [here](https://swagger-docs.herokuapp.com/docs/uber)
 
