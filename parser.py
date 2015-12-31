@@ -8,7 +8,7 @@ class SwaggerParser:
 
     def __load(self, file_path):
         with open(file_path, 'r') as stream:
-                return yaml.load(stream)
+            return yaml.load(stream)
 
     def info(self):
         return self.spec.get('info', {})
