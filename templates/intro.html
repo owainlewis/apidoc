@@ -2,25 +2,17 @@
 {% block body %}
 
 <div class="container intro">
-  <h1>My company documentation</h1>
-  <p>  We’ve got comprehensive guides for each platform that should help out with anything you need. You can also take a look at the detailed API references and tutorials for a better idea of how it all comes together.</p>
+
+  <h1>My documentation</h1>
+  <p>This is an example splash page for your APIs. You can customize
+  this page in any way you like</p>
 
     <h3>APIs</h3>
     <table class="table table-striped">
       {% for spec in specs %}
-        <tr><td><a href="/docs/{{spec}}">{{spec}}</a></td></tr>
+        <tr><td><a href="/docs/{{spec}}">{{ spec.title() }}</a></td></tr>
       {% endfor %}
     </table>
-
-
-    <h2>Info</h2>
-    <p>Refactoring data through the Parse REST API is built around a JSON encoding of the object's data. This data is schemaless, which means that you don't need to specify ahead of time what keys exist on each object. You simply set whatever key-value pairs you want, and the backend will store it.</p>
-
-    <p>For example, let's say you're tracking high scores for a game. A single object could contain:</p>
-
-    <h2>How it works</h2>
-    <img src="https://developers.braintreepayments.com/img/developers/diagram-overview.png" />
-
 </div>
 
 {% endblock %}

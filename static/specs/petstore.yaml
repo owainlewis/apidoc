@@ -35,6 +35,34 @@ paths:
               description: A link to the next page of responses
           schema:
             $ref: Pets
+          examples:
+            application/json: |
+                        examples:
+            application/json: |
+              {
+                "object": "balance",
+                "available": [
+                  {
+                    "currency": "usd",
+                    "amount": 7466650034,
+                    "source_types": {
+                      "card": 7466650034,
+                      "bitcoin_receiver": 0
+                    }
+                  }
+                ],
+                "livemode": false,
+                "pending": [
+                  {
+                    "currency": "usd",
+                    "amount": 34177050,
+                    "source_types": {
+                      "card": 34176951,
+                      "bitcoin_receiver": 99
+                    }
+                  }
+                ]
+              }
         default:
           description: unexpected error
           schema:

@@ -32,15 +32,43 @@ paths:
           required: true
           type: number
           format: double
-      tags: 
+      tags:
         - Products
-      responses:  
+      responses:
         200:
           description: An array of products
           schema:
             type: array
             items:
               $ref: Product
+          examples:
+            application/json: |
+                        examples:
+            application/json: |
+              {
+                "object": "balance",
+                "available": [
+                  {
+                    "currency": "usd",
+                    "amount": 7466650034,
+                    "source_types": {
+                      "card": 7466650034,
+                      "bitcoin_receiver": 0
+                    }
+                  }
+                ],
+                "livemode": false,
+                "pending": [
+                  {
+                    "currency": "usd",
+                    "amount": 34177050,
+                    "source_types": {
+                      "card": 34176951,
+                      "bitcoin_receiver": 99
+                    }
+                  }
+                ]
+              }
         default:
           description: Unexpected error
           schema:
@@ -74,9 +102,9 @@ paths:
           required: true
           type: number
           format: double
-      tags: 
+      tags:
         - Estimates
-      responses:  
+      responses:
         200:
           description: An array of price estimates by product
           schema:
@@ -113,9 +141,9 @@ paths:
           in: query
           type: string
           description: Unique identifier representing a specific product for a given latitude & longitude.
-      tags: 
+      tags:
         - Estimates
-      responses:  
+      responses:
         200:
           description: An array of products
           schema:
@@ -130,7 +158,7 @@ paths:
     get:
       summary: User Profile
       description: The User Profile endpoint returns information about the Uber user that has authorized with the application.
-      tags: 
+      tags:
         - User
       responses:
         200:
@@ -154,9 +182,9 @@ paths:
         - name: limit
           in: query
           type: integer
-          format: int32 
+          format: int32
           description: Number of items to retrieve. Default is 5, maximum is 100.
-      tags: 
+      tags:
         - User
       responses:
         200:
@@ -196,7 +224,7 @@ definitions:
       display_name:
         type: string
         description: Display name of product.
-      estimate: 
+      estimate:
         type: string
         description: Formatted string of estimate in local currency of the start location. Estimate could be a range, a single number (flat rate) or "Metered" for TAXI.
       low_estimate:
@@ -224,7 +252,7 @@ definitions:
         description: Image URL of the Uber user.
       promo_code:
         type: string
-        description: Promo code of the Uber user.   
+        description: Promo code of the Uber user.
   Activity:
     properties:
       uuid:

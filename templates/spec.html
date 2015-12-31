@@ -1,44 +1,51 @@
 {% extends "layout.html" %}
 {% block body %}
+
     <div id="sidebar">
-      <h3>Operations</h3>
+      <header>
+        <h1 id="logo"><a href="/">AcmeCorp</a></h1>
+      </header>
       <ul>
-        {% for operation in operations %}
-	  <li>
-	    <a href="#{{operation['method']}}{{operation['path']}}">{{ operation['summary'] }}</a>
-          </li>
-        {% endfor %}
+      {% for operation in paths %}
+        <li>
+          <a href="#{{operation['method']}}{{operation['path']}}">{{ operation['summary'] }}</a>
+        </li>
+      {% endfor %}
       </ul>
     </div>
+
     <div id="main">
       <section class="method">
         <div class="left">
           <h1>{{ spec.info.title }} v{{ spec.info.version }}</h1>
+
           {{ spec.info.description }}
-	  <p>You can put in here whatever information you like</p>
 
-	  <h2>Authentication</h2>
+          <p>Here is a hand written introduction to your API specs</p>
 
-	  <p>Some information here about how to authenticate blah blah</p>
         </div>
         <div class="right">
+          <h2>Service Endpoint</h2>
+          <p>{{ spec.get('info', {}).get('endpoint', 'N/A') }}</p>
         </div>
       </section>
-      
-      {% for operation in operations %}
+
+      {% for operation in paths %}
       <section class="method" id="{{operation['method']}}{{operation['path']}}">
         <div class="left">
-          <h1>{{ operation['summary'] }}</h1>
+          <h2>{{ operation['summary'] }}</h2>
+          <p>{{ operation['description'] }}</p>
+
+          <p>Participant: {{
+          operation.get('x-monitise-participant','N/A').upper() }} </p>
             <div class="request">
 	    <h4>HTTP Request</h4>
             <code>
               {{ operation['method'].upper() }} {{ operation['path'] }}
             </code>
 	  </div>
-	  <div class="description">
-            {{ operation['description'] }}
 
-	    <table class="table striped">
+	    <table class="table table-striped">
 	      <tr>
 		<th>Status</th>
 		<th>Description</th>
@@ -50,21 +57,20 @@
               </tr>
 	      {% endfor %}
 	    </table>
-          </div>          
 	</div>
-       <div class="right">
-	 <h3>Example Request</h3>
-         <pre>
-           <code class="javascript">
-curl -iX GET http://mysite.com/path	     
-           </code>
-         </pre>
-      </div>	
+
+        <div class="right">
+          {% for status, info in operation['responses'].items() %}
+            {% if info.get('examples', {}).get('application/json') %}
+            <h2>Example Response</h2>
+              <pre class="javascript">
+              <code>
+{{info.get('examples').get('application/json')}}
+              </code>
+              </pre>
+            {% endif %}
+          {% endfor %}
+      </div>
       </section>
-      {% endfor %}     
-    </div>
-
-    </div>
-
+      {% endfor %}
 {% endblock %}
-
