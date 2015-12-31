@@ -15,7 +15,7 @@ Simply drop your Swagger specs in static/specs and off you go :)
 This app can use either Python 2 or 3 and is pretty much a standard
 Flask application.
 
-```
+```bash
 # Install deps
 pip3 install -r requirements.txt
 # Run it
@@ -27,14 +27,12 @@ Update the templates or stylesheets to suite your needs.
 
 ## Deploy to Heroku
 
-```
+```bash
 heroku create mydocs
 git push heroku master
 ```
 
 # Preview
-
-![](https://raw.githubusercontent.com/owainlewis/apidoc/master/static/images/prev.png)
 
 # License
 
