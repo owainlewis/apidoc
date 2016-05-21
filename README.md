@@ -9,6 +9,8 @@ quickly customize any of the templates.
 
 Simply drop your Swagger specs in static/specs and off you go :)
 
+![](https://raw.githubusercontent.com/owainlewis/apidoc/master/static/images/preview.png)
+
 ## Getting Started
 
 This app can use either Python 2 or 3 and is pretty much a standard
