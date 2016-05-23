@@ -18,9 +18,10 @@ Flask application.
 
 ```bash
 # Install deps
+sudo apt-get install python3-pip
 pip3 install -r requirements.txt
 # Run it
-python app.py
+python3 app.py
 # Visit localhost:5000
 ```
 
