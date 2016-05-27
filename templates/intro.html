@@ -1,18 +1,20 @@
 {% extends "layout.html" %}
 {% block body %}
 
-  <div class="container intro">
-  
+<div class="container intro">
+
     <h1>My documentation</h1>
     <p>This is an example splash page for your APIs. You can customize this page in any way you like</p>
-  
+
     <h3>APIs</h3>
-    
+
     <table class="table table-striped">
-      {% for spec in specs %}
-        <tr><td><a href="/docs/{{spec}}">{{ spec.title() }}</a></td></tr>
-      {% endfor %}
+        {% for spec in specs %}
+        <tr>
+            <td><a href="/docs/{{spec}}">{{ spec.title() }}</a></td>
+        </tr>
+        {% endfor %}
     </table>
-  </div>
+</div>
 
 {% endblock %}
