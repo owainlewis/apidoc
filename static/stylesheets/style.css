@@ -1,6 +1,6 @@
 body {
     font-size: 15px;
-    color: #4c555a;
+    color: #576f7f;
     font-family: 'Lato', Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -25,7 +25,7 @@ h1 { font-size: 32px; }
 h2 { font-size: 24px; }
 h3 { font-size: 18px; }
 
-h1, h2, h3, h4 { color: #333; font-weight: bold; }
+h1, h2, h3, h4 { color: #0e304b; font-weight: bold; }
 
 pre, code { font-size: 14px; }
 
@@ -92,9 +92,9 @@ img { max-width: 100%; }
 
 .right {
     flex: 0 0 50%;
-    background: #2d3134;
+    background: #002451;
     color: #d0d4d7;
-    border-bottom: 2px solid #333;
+    border-bottom: 2px solid #002451;
 }
 
 .right h1, .right h2, .right h3, .right h4 { color: #dde4e8; }
@@ -109,7 +109,7 @@ img { max-width: 100%; }
     border: 2px solid #ddd;
 }
 
-pre { background: #1d1f21; color: white; border: 1px solid rgba(100,100,100,0.5); }
+pre { background: #002451; color: white; border: 1px solid rgba(100,100,100,0.5); }
 
 .notice {
   background: #E1F5FE;
