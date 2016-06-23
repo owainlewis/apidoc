@@ -1,10 +1,10 @@
 # API DOC
 
-Generate professional looking, human readable documentation from **Swagger** or RAML (TODO).
+Generate professional looking, human readable documentation from Swagger.
 
 A demo can be found [here](https://swagger-docs.herokuapp.com/docs/uber)
 
-Currently this only supports Swagger but RAML will be next. You can
+Currently this only supports Swagger YAML format, but RAML will be next. You can
 quickly customize any of the templates.
 
 Simply drop your Swagger specs in static/specs and off you go :)
