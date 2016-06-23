@@ -36,5 +36,4 @@ git push heroku master
 
 # License
 
-You are free to use this for whatever you want. Do whatever you like
-with it :)
+![MIT License](LICENSE)
