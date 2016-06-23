@@ -34,8 +34,6 @@ heroku create mydocs
 git push heroku master
 ```
 
-# Preview
-
 # License
 
 You are free to use this for whatever you want. Do whatever you like
