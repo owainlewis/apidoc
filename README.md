@@ -36,4 +36,4 @@ git push heroku master
 
 # License
 
-![MIT License](LICENSE)
+[MIT License](LICENSE)
